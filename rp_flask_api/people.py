@@ -1,4 +1,6 @@
 from datetime import datetime
+from flask import abort
+
 
 def get_timestamp():
     return datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))

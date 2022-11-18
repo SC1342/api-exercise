@@ -21,6 +21,15 @@ components:
         lname:
           type: "string"
 
+  parameters:
+    lname:
+      name: "lname"
+      description: "Last name of the person to get"
+      in: path
+      required: True
+      schema:
+        type: "string"
+
 paths:
   /people:
     get:
@@ -32,10 +41,6 @@ paths:
         "200":
           description: "Successfully read people list"
 
-paths:
-  /people:
-    get:
-        # ...
     post:
       operationId: "people.create"
       tags:
@@ -53,21 +58,6 @@ paths:
         "201":
           description: "Successfully created person"
 
-components:
-  schemas:
-    # ...
-  parameters:
-    lname:
-      name: "lname"
-      description: "Last name of the person to get"
-      in: path
-      required: True
-      schema:
-        type: "string"
-
-paths:
-  /people:
-    # ...
   /people/{lname}:
     get:
       operationId: "people.read_one"
@@ -79,4 +69,3 @@ paths:
       responses:
         "200":
           description: "Successfully read person"
-  
